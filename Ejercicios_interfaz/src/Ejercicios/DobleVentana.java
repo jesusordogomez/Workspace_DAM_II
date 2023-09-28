@@ -43,7 +43,7 @@ public class DobleVentana {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
+		frame = new JFrame("Ventana 1");
 		frame.getContentPane().setBackground(new Color(192, 192, 192));
 		frame.setBounds(100, 100, 301, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,7 +61,7 @@ public class DobleVentana {
 	}
     private void abrirVentana2() {
         // Crear la segunda ventana como un JDialog modal
-        JDialog ventana2 = new JDialog(frame);
+        JDialog ventana2 = new JDialog(frame, "Ventana 2", true);
         ventana2.setSize(200, 200);
         
         // Configurar el contenido de la segunda ventana
