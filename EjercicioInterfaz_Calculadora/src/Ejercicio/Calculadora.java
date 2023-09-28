@@ -60,13 +60,13 @@ public class Calculadora {
 		frmCalculadora.getContentPane().add(textArea);
 		
 		
-		//pulsar teclado
+		//con este metodo solo puedo teclear los caracteres que yo necesito para la calculadora
 		textArea.addKeyListener(new KeyAdapter() {
 		    @Override
 		    public void keyTyped(KeyEvent e) {
 		        char c = e.getKeyChar();
-		        if (!Character.isDigit(c) && c != '+' && c != '-' && c != '*' && c != '/' && c != '=' && c!=',') {
-		            e.consume(); // Evitar que se escriba el carácter no permitido
+		        if (!Character.isDigit(c) && c != '+' && c != '-' && c != '*' && c != '/' && c != '=' && c!='.') {
+		            e.consume(); 
 		        }
 		    }
 		});
