@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -14,11 +17,13 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JTextPane;
 import java.awt.Font;
+import javax.swing.JTable;
 
 public class Calculadora {
 
 	private JFrame frmCalculadora;
-
+	private JTextArea textArea;
+    private String expresion = "";
 	/**
 	 * Launch the application.
 	 */
@@ -265,5 +270,33 @@ public class Calculadora {
 		txtrCalculadora.setText("CALCULADORA");
 		txtrCalculadora.setBounds(75, 27, 188, 43);
 		frmCalculadora.getContentPane().add(txtrCalculadora);
+		
+		JButton igual1 = new JButton("=");
+        igual1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                calcularExpresion();
+            }
+        });
+        igual1.setBounds(178, 216, 48, 23);
+        frmCalculadora.getContentPane().add(igual1);
+
+        // ... (Resto del código) ...
+    }
+
+    private void calcularExpresion() {
+        ScriptEngineManager manager = new ScriptEngineManager();
+        ScriptEngine engine = manager.getEngineByName("js");
+
+        try {
+            Object result = engine.eval(expresion);
+            textArea.setText(result.toString());
+        } catch (ScriptException e) {
+            textArea.setText("Error");
+        }
+    }
+
+		
 	}
-}
+	
+	
+
