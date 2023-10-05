@@ -304,6 +304,8 @@ public class Calculadora {
 	});
 	frmCalculadora.getContentPane().add(raiz);
 	
+	
+	//boton porcentaje
 	JButton porciento = new JButton("%");
 	porciento.setBounds(33, 37, 61, 31);
 	frmCalculadora.getContentPane().add(porciento);
