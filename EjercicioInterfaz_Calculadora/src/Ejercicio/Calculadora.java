@@ -317,7 +317,7 @@ public class Calculadora {
 	frmCalculadora.getContentPane().add(porciento);
 	
 	
-	
+	//hola
 	}
 	//creo el metodo de elevar a la potencia
 	private double elevar(double base, double exponente) {
