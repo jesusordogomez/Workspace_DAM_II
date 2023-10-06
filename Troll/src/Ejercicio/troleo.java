@@ -38,7 +38,7 @@ public class troleo {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	
+	//hola
 	
 	private void initialize() {
 		
