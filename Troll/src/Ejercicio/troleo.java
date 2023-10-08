@@ -62,13 +62,13 @@ public class troleo {
 		boton.setBackground(new Color(202, 202, 202));
 		frame.getContentPane().add(boton);
 		
-		JTextArea txtrParaCerrarTienes = new JTextArea();
-		txtrParaCerrarTienes.setEnabled(false);
-		txtrParaCerrarTienes.setFont(new Font("Monospaced", Font.BOLD, 14));
-		txtrParaCerrarTienes.setBounds(176, 40, 267, 50);
-		frame.getContentPane().add(txtrParaCerrarTienes);
-		txtrParaCerrarTienes.setBackground(new Color(87, 87, 87));
-		txtrParaCerrarTienes.setText("PARA CERRAR TIENES QUE PULSAR");
+		JTextArea TextArea = new JTextArea();
+		TextArea.setEnabled(false);
+		TextArea.setFont(new Font("Monospaced", Font.BOLD, 14));
+		TextArea.setBounds(176, 40, 267, 50);
+		frame.getContentPane().add(TextArea);
+		TextArea.setBackground(new Color(87, 87, 87));
+		TextArea.setText("PARA CERRAR TIENES QUE PULSAR");
 		
 		//con el metodo mouselistener implemento un par de metodos para manejar el raton
 		boton.addMouseListener( new MouseAdapter() {
