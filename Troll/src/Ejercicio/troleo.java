@@ -51,7 +51,7 @@ public class troleo {
 		frame.setResizable(false);//con el metodo resizable desactivo la capacidad de cambiar la dimension de la ventana
 		frame.pack();// con el pack me aseguro de que no se pueda redimensionar la ventana
 		frame.setVisible(true);
-		frame.setTitle("Troleo Sencillo");		
+		frame.setTitle("Troleo");		
 		frame.getContentPane().setLayout(null);
 		frame.setLocationRelativeTo(null);
 		
@@ -63,8 +63,9 @@ public class troleo {
 		frame.getContentPane().add(boton);
 		
 		JTextArea txtrParaCerrarTienes = new JTextArea();
+		txtrParaCerrarTienes.setEnabled(false);
 		txtrParaCerrarTienes.setFont(new Font("Monospaced", Font.BOLD, 14));
-		txtrParaCerrarTienes.setBounds(176, 40, 238, 50);
+		txtrParaCerrarTienes.setBounds(176, 40, 267, 50);
 		frame.getContentPane().add(txtrParaCerrarTienes);
 		txtrParaCerrarTienes.setBackground(new Color(87, 87, 87));
 		txtrParaCerrarTienes.setText("PARA CERRAR TIENES QUE PULSAR");
@@ -83,7 +84,7 @@ public class troleo {
 				// TODO Auto-generated method stub
 				Random r = new Random();//
 				boton.setBounds(r.nextInt(0,350),r.nextInt(0,350), 75, 40);
-				boton.setText("clcikea");
+				boton.setText("Salir");
 				
 			}
 		});
