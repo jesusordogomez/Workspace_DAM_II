@@ -13,20 +13,20 @@ public class contraseña {
         Scanner scanner = new Scanner(System.in);
         String password;
 
-        System.out.println("Ingrese una nueva contraseña:");
+        System.out.println("Introduce una contraseña: ");
         password = scanner.nextLine();
 
         // Almacenar la contraseña en un archivo txt
         try (BufferedWriter escribir = new BufferedWriter(new FileWriter("contraseña.txt"))) {
             escribir.write(password);
-            System.out.println("Contraseña almacenada con éxito.");
+            System.out.println("Contraseña almacenada correctamente.");
         } catch (IOException e) {
             System.err.println("Error al almacenar la contraseña en el archivo.");
             e.printStackTrace();
             return;
         }
 
-        System.out.println("Ingrese la contraseña para acceder:");
+        System.out.println("Introduce la contraseña para acceder al archivo: ");
         String contraseña = scanner.nextLine();
 
         // Leer la contraseña almacenada en el archivo
@@ -35,9 +35,9 @@ public class contraseña {
 
             // Verificar si la contraseña coincide
             if (contraseña.equals(leercontraseña)) {
-                System.out.println("Contraseña correcta. Acceso permitido.");
+                System.out.println("Contraseña correcta. Puedes acceder al archivo.");
             } else {
-                System.out.println("Contraseña incorrecta. Acceso denegado.");
+                System.out.println("Contraseña incorrecta. No puedes acceder al archivo.");
             }
         } catch (IOException e) {
             System.err.println("Error al leer la contraseña almacenada.");
