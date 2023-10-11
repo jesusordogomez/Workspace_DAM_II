@@ -16,7 +16,7 @@ public class contraseña {
         System.out.println("Introduce una contraseña: ");
         password = scanner.nextLine();
 
-        // Almacenar la contraseña en un archivo txt
+        // almaceno la contraseña en un archivo txt
         try (BufferedWriter escribir = new BufferedWriter(new FileWriter("contraseña.txt"))) {
             escribir.write(password);
             System.out.println("Contraseña almacenada correctamente.");
@@ -29,11 +29,11 @@ public class contraseña {
         System.out.println("Introduce la contraseña para acceder al archivo: ");
         String contraseña = scanner.nextLine();
 
-        // Leer la contraseña almacenada en el archivo
+        // metodo para poder leer la contraseñadel txt si la contraseña es correcta tal y como la ha escrito el usuario
         try (BufferedReader leer = new BufferedReader(new FileReader("contraseña.txt"))) {
             String leercontraseña = leer.readLine();
 
-            // Verificar si la contraseña coincide
+            // verificacion de la contraseña
             if (contraseña.equals(leercontraseña)) {
                 System.out.println("Contraseña correcta. Puedes acceder al archivo.");
             } else {

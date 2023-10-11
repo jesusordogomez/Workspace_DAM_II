@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class Digest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        //primero le pido al usuario que me escriba una contraseña
         System.out.print("Introduce una contraseña: ");
         String inputPassword = scanner.nextLine();
 
-        // Generar el hash de la contraseña
+        // aqui genero el messagedigest para que me de el cifrado de la contraseña introducida por el usuario
         String hashedPassword = "";
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -28,7 +28,7 @@ public class Digest {
             e.printStackTrace();
         }
 
-        // Almacenar el hash de la contraseña en un archivo
+        // almaceno la contraseña en Digest.txt y si se guarda bien lo muestro por pantalla
         try (PrintWriter writer = new PrintWriter(new FileWriter("Digest.txt"))) {
             writer.println(hashedPassword);
             System.out.println("Contraseña almacenada correctamente.");
@@ -40,7 +40,7 @@ public class Digest {
         System.out.print("Introduce la contraseña para acceder al archivo: ");
         String inputVerificationPassword = scanner.nextLine();
 
-        // Verificar si la contraseña coincide
+        // aqui verifico si la contraseña es la correcta para acceder a ella
         String hashedInputPassword = "";
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -56,7 +56,6 @@ public class Digest {
 
         if (hashedPassword.equals(hashedInputPassword)) {
             System.out.println("Contraseña correcta. Puedes acceder al archivo.");
-            // Aquí puedes realizar las operaciones que desees con el archivo
         } else {
             System.out.println("Contraseña incorrecta. No puedes acceder al archivo.");
         }
