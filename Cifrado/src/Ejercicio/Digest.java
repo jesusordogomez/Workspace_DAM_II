@@ -34,7 +34,7 @@ public class Digest {
             System.out.println("Contraseña almacenada correctamente.");
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }//
 
         // Pedir la contraseña nuevamente para verificar
         System.out.print("Introduce la contraseña para acceder al archivo: ");
